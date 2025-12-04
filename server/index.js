@@ -46,7 +46,8 @@ app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Handle client-side routing by serving index.html for all non-API routes
-app.get('*', (req, res, next) => {
+// Using regex /.*/ because string '*' is treated differently in Express 5/path-to-regexp
+app.get(/.*/, (req, res, next) => {
     if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
         return next();
     }
