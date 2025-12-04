@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./database.sqlite:/app/database.sqlite
+    environment:
+      - NODE_ENV=production

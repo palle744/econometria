@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+.github
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+uploads
+database.sqlite
+server.log
